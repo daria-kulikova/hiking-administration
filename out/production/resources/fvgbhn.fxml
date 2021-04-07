@@ -1,0 +1,74 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.GridPane?>
+<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="500.0" prefWidth="400.0"
+          vgap="20" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="app.controllers.HikingParametrs">
+    <children>
+        <GridPane columnConstraints="2"/>
+        <HBox>
+            <Label text="Выберите тип похода: "/>
+            <ComboBox fx:id="roteBox" />
+        </HBox>
+
+        <Label text="Укажите желаемый период похода:"/>
+
+        <HBox>
+            <Label text="Дата начала: "/>
+            <TextField fx:id="start"/>
+        </HBox>
+
+        <HBox>
+            <Label text="Дата окончания:"/>
+            <TextField fx:id="finish"/>
+        </HBox>
+
+        <HBox>
+            <Label text="Максимальная стоимость: "/>
+            <TextField fx:id="cost"/>
+        </HBox>
+
+    </children>
+
+</FlowPane>
+
+
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+
+        <?import javafx.geometry.Insets?>
+<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL"
+          vgap="20" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="app.controllers.ScheduleUpdate">
+<padding><Insets top="10" right="10" left="10" bottom="25"/> </padding>
+
+<Label text="Изменить расписание"/>
+
+<HBox>
+    <TextField fx:id="id" promptText="ID"/>
+    <TextField fx:id="name" promptText="Название"/>
+</HBox>
+
+<HBox>
+    <TextField fx:id="start" promptText="Начало"/>
+    <TextField fx:id="finish" promptText="Окончание"/>
+    <TextField fx:id="cost" promptText="Стоимсть"/>
+</HBox>
+
+<HBox>
+    <Button fx:id="insert" text="Добавить"/>
+    <Button fx:id="update" text="Изменить"/>
+    <Button fx:id="delete" text="Удалить"/>
+</HBox>
+
+</FlowPane>

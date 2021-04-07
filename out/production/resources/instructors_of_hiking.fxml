@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.InstructorsOfHiking">
+    <padding><Insets bottom="25" left="10" right="10" top="10" /> </padding>
+
+    <top>
+        <Button fx:id="back" onAction="#goToMenu" text="Назад" />
+    </top>
+
+    <center>
+
+    <VBox fx:id="vboxPane" alignment="CENTER" spacing="20">
+        <padding><Insets top="10" right="0" left="0" bottom="30"/> </padding>
+
+        <HBox alignment="CENTER" spacing="20">
+
+            <VBox fx:id="hikingTablePane" spacing="10">
+                <Label style="-fx-font-weight: bold" text="Походы" />
+                <ScrollPane prefWidth="401">
+                    <TableView fx:id="hikingTable" prefHeight="540.0" prefWidth="400.0">
+                        <columns>
+                            <TableColumn fx:id="idHiking" prefWidth="72.0" text="ID" />
+                            <TableColumn fx:id="nameHiking" prefWidth="217.0" text="Название" />
+                            <TableColumn fx:id="startHiking" prefWidth="108.0" text="Начало" />
+                        </columns>
+                    </TableView>
+                </ScrollPane>
+            </VBox>
+
+            <Button fx:id="showInstructorsButton" onAction="#showInstructors" text="-&gt;" />
+
+            <VBox fx:id="instructorsTablePane" spacing="10">
+                <Label style="-fx-font-weight: bold" text="Инструкторы" />
+                <ScrollPane prefWidth="301">
+                    <TableView fx:id="instructorsTable" prefHeight="250.0" prefWidth="300.0">
+                        <columns>
+                            <TableColumn fx:id="idInstructor" prefWidth="69.0" text="ID" />
+                            <TableColumn fx:id="surnameInstructor" prefWidth="148.0" text="ФИО" />
+                            <TableColumn fx:id="categoryInstructor" prefWidth="81.0" text="Разряд" />
+                        </columns>
+                    </TableView>
+                </ScrollPane>
+
+                <Label style="-fx-font-weight: bold" text="Участники" />
+                <ScrollPane prefWidth="301">
+                    <TableView fx:id="participantsTable" prefHeight="250.0" prefWidth="300.0">
+                        <columns>
+                            <TableColumn fx:id="idParticipant" prefWidth="69.0" text="ID" />
+                            <TableColumn fx:id="surnameParticipant" prefWidth="148.0" text="ФИО" />
+                            <TableColumn fx:id="categoryParticipant" prefWidth="81.0" text="Разряд" />
+                        </columns>
+                    </TableView>
+                </ScrollPane>
+            </VBox>
+
+        </HBox>
+
+        <HBox fx:id="hboxPane" spacing="20" alignment="CENTER"/>
+
+    </VBox>
+
+    </center>
+
+</BorderPane>

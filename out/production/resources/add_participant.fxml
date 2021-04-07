@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.controllers.AddParticipant"
+            prefWidth="700">
+    <padding><Insets bottom="25" left="10" right="10" top="10" /> </padding>
+
+    <center>
+
+        <VBox alignment="CENTER" spacing="20">
+            <padding><Insets top="30" right="30" left="30" bottom="30"/> </padding>
+
+            <Label style="-fx-font-weight: bold" text="Выберите участника из базы или добавьте нового:" />
+            <FlowPane alignment="CENTER" fx:id="tablePane">
+                <ScrollPane>
+                    <TableView fx:id="participantsTable" prefHeight="300.0" prefWidth="387.0">
+                        <columns>
+                            <TableColumn fx:id="idParticipant" prefWidth="90.0" text="ID" />
+                            <TableColumn fx:id="surnameParticipant" prefWidth="185.0" text="ФИО" />
+                            <TableColumn fx:id="categoryParticipant" prefWidth="110.0" text="Разряд" />
+                        </columns>
+                    </TableView>
+                </ScrollPane>
+            </FlowPane>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="updateButton" text="Изменить" onAction="#updateParticipant"/>
+                <Button fx:id="chooseButton" text="Выбрать" onAction="#chooseParticipant"/>
+            </HBox>
+
+            <VBox prefHeight="40"/>
+
+            <GridPane hgap="20" vgap="20" fx:id="gridPane">
+
+                <TextField fx:id="surname" promptText="Фамилия*" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="name" promptText="Имя*" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <TextField fx:id="patronymic" promptText="Отчество" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+
+                <TextField fx:id="phoneNumber" promptText="Телефон* (79*********)" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="eMail" promptText="e-mail*" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <DatePicker fx:id="birth" promptText="День рожд." GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+                <ComboBox fx:id="sportsCategory" promptText="Разряд" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="I" />
+                            <String fx:value="II"/>
+                            <String fx:value="III"/>
+                            <String fx:value="IV"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <ComboBox fx:id="position" promptText="Должность*" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Участник"/>
+                            <String fx:value="Инструктор"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Button fx:id="saveUpdateButton" text="Изменить" onAction="#saveUpdate" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Button fx:id="createButton" text="Добавить" onAction="#createParticipant" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+            </GridPane>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

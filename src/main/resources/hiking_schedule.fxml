@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="app.controllers.Schedule">
+    <padding><Insets top="10" right="10" left="10" bottom="25"/> </padding>
+
+    <top>
+        <Button fx:id="back" text="Назад" onAction="#goToHikingParametrs"/>
+    </top>
+
+    <center>
+        <FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="HORIZONTAL" vgap="20" fx:id="schedulePane">
+
+            <padding><Insets right="25" left="25"/> </padding>
+            <children>
+                <Label text="РАСПИСАНИЕ ПОХОДОВ" style = "-fx-font-weight: bold"/>
+                <ScrollPane>
+                    <TableView fx:id="schedule" prefWidth="785" prefHeight="300">
+                        <columns>
+                            <TableColumn text="ID" fx:id="id"/>
+                            <TableColumn text="Название похода" fx:id="name"/>
+                            <TableColumn text="Тип" fx:id="type"/>
+                            <TableColumn text="Начало" fx:id="start"/>
+                            <TableColumn text="Окончание" fx:id="finish"/>
+                            <TableColumn text="Стоимость" fx:id="cost"/>
+                        </columns>
+                    </TableView>
+                </ScrollPane>
+            </children>
+        </FlowPane>
+    </center>
+</BorderPane>
